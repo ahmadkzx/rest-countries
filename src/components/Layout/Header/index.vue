@@ -1,10 +1,14 @@
 <template>
   <header class="header">
-    <h1 class="header__title">Where in the world?</h1>
-    <button class="header__theme-toggle">
-      <i class="gg-moon"></i>
-      <span class="header__theme-toggle-text">Dark Mode</span>
-    </button>
+    <div class="header__content">
+      <h1 class="header__content-title">Where in the world?</h1>
+      <button class="header__content-theme-toggle">
+        <i class="gg-moon"></i>
+        <span class="header__content-theme-toggle-text">Dark Mode</span>
+      </button>
+    </div>
+
+    <div class="header__backdrop"></div>
   </header>
 </template>
 
