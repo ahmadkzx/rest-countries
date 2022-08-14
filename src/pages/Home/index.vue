@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <div class="home">
-      <SearchInput />
+      <SearchInput v-model="searchQuery" />
       <Filter />
 
       <template v-if="isLoading">
         <span class="home__loading">Loading...</span>
       </template>
       <template v-else-if="!isLoading && !isHaveError && countries">
-        <CountriesList :countries="countries" />
+        <CountriesList :countries="filteredCountries" />
       </template>
       <template v-else>
         <button class="home__retry" @click="getCountries">Retry</button>
@@ -34,9 +34,18 @@ export default {
 
   data: () => ({
     countries: null,
+    searchQuery: '',
     isLoading: false,
     isHaveError: false,
   }),
+
+  computed: {
+    filteredCountries() {
+      return this.searchQuery.trim().length == 0
+        ? this.countries
+        : this.filterCountriesBySearchQuery()
+    },
+  },
 
   mounted() {
     this.getCountries()
@@ -58,6 +67,12 @@ export default {
       } finally {
         this.isLoading = false
       }
+    },
+
+    filterCountriesBySearchQuery() {
+      return this.countries.filter(
+        (country) => country.name.toLowerCase().indexOf(this.searchQuery.toLowerCase()) >= 0
+      )
     },
   },
 }
