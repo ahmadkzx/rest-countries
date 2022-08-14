@@ -51,10 +51,11 @@ export default {
           let isValid = true
 
           if (this.filters.region)
-            isValid = country.region.toLowerCase() == this.filters.region.toLowerCase()
+            isValid = isValid && country.region.toLowerCase() == this.filters.region.toLowerCase()
 
           if (this.filters.q.trim().length > 0)
-            isValid = country.name.toLowerCase().indexOf(this.filters.q.toLowerCase()) >= 0
+            isValid =
+              isValid && country.name.toLowerCase().indexOf(this.filters.q.toLowerCase()) >= 0
 
           return isValid ? country : false
         })
