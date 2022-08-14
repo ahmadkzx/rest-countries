@@ -10,13 +10,15 @@
         page-mode
         v-slot="{ item }"
       >
-        <CountryCard
-          :name="item.name"
-          :population="item.population"
-          :region="item.region"
-          :capital="item.capital"
-          :flag-url="item.flags.svg"
-        />
+        <router-link class="countries__wrapper-item" :to="'/' + item.name">
+          <CountryCard
+            :name="item.name"
+            :population="item.population"
+            :region="item.region"
+            :capital="item.capital"
+            :flag-url="item.flags.svg"
+          />
+        </router-link>
       </RecycleScroller>
     </div>
   </div>
