@@ -1,18 +1,16 @@
 <template>
   <DefaultLayout>
-    <HomePage />
+    <router-view></router-view>
   </DefaultLayout>
 </template>
 
 <script>
-import HomePage from './pages/Home'
 import DefaultLayout from './layouts/Default'
 
 export default {
   name: 'App',
 
   components: {
-    HomePage,
     DefaultLayout,
   },
 }
