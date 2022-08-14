@@ -2,7 +2,7 @@
   <div class="container">
     <div class="home">
       <SearchInput v-model="searchQuery" />
-      <Filter />
+      <RegionFilter v-model="regionFilter" />
 
       <template v-if="isLoading">
         <span class="home__loading">Loading...</span>
@@ -19,16 +19,16 @@
 
 <script>
 import { $getCountries } from '@/api'
-import Filter from '@/components/Home/Filter'
 import CountriesList from '@/components/Home/Countries'
 import SearchInput from '@/components/Home/SearchInput'
+import RegionFilter from '@/components/Home/RegionFilter'
 
 export default {
   name: 'Home',
 
   components: {
-    Filter,
     SearchInput,
+    RegionFilter,
     CountriesList,
   },
 
@@ -36,14 +36,29 @@ export default {
     countries: null,
     searchQuery: '',
     isLoading: false,
+    regionFilter: null,
     isHaveError: false,
   }),
 
   computed: {
     filteredCountries() {
-      return this.searchQuery.trim().length == 0
-        ? this.countries
-        : this.filterCountriesBySearchQuery()
+      let countries = this.countries
+
+      if (this.searchQuery.trim().length > 0 || this.regionFilter) {
+        countries = countries.filter((country) => {
+          let isValid = true
+
+          if (this.regionFilter)
+            isValid = country.region.toLowerCase() == this.regionFilter.toLowerCase()
+
+          if (this.searchQuery.trim().length > 0)
+            isValid = country.name.toLowerCase().indexOf(this.searchQuery.toLowerCase()) >= 0
+
+          return isValid ? country : false
+        })
+      }
+
+      return countries
     },
   },
 
