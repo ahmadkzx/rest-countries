@@ -41,6 +41,10 @@ export default {
     },
 
     updateModelValue(filter) {
+      this.$router.replace({
+        path: this.$route.path,
+        query: { ...this.$route.query, region: filter },
+      })
       this.$emit('update:modelValue', filter)
       this.isShowList = false
     },

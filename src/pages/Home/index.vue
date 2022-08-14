@@ -64,6 +64,7 @@ export default {
 
   mounted() {
     this.getCountries()
+    this.applyFiltersFromUrl()
   },
 
   methods: {
@@ -84,10 +85,9 @@ export default {
       }
     },
 
-    filterCountriesBySearchQuery() {
-      return this.countries.filter(
-        (country) => country.name.toLowerCase().indexOf(this.searchQuery.toLowerCase()) >= 0
-      )
+    applyFiltersFromUrl() {
+      this.searchQuery = this.$route.query.q || ''
+      this.regionFilter = this.$route.query.region || ''
     },
   },
 }

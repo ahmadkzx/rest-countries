@@ -24,7 +24,9 @@ export default {
 
   methods: {
     updateModelValue(e) {
-      this.$emit('update:modelValue', e.target.value)
+      const value = e.target.value
+      this.$router.replace({ path: this.$route.path, query: { ...this.$route.query, q: value } })
+      this.$emit('update:modelValue', value)
     },
   },
 }
