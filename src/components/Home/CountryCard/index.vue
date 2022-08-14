@@ -1,6 +1,8 @@
 <template>
   <div class="country">
-    <img :src="flagUrl" :alt="name" class="country__flag" />
+    <div class="country__flag">
+      <img :src="flagUrl" :alt="name" class="country__flag-photo" />
+    </div>
 
     <div class="country__info">
       <h5 class="country__info-name">{{ name }}</h5>

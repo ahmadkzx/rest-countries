@@ -7,16 +7,8 @@
       <template v-if="isLoading">
         <span class="home__loading">Loading...</span>
       </template>
-      <template v-else-if="!isLoading && !isHaveError">
-        <div v-for="country in countries" :key="country.cioc" class="home__country">
-          <CountryCard
-            :name="country.name"
-            :population="country.population"
-            :region="country.region"
-            :capital="country.capital"
-            :flag-url="country.flags.svg"
-          />
-        </div>
+      <template v-else-if="!isLoading && !isHaveError && countries">
+        <CountriesList :countries="countries" />
       </template>
       <template v-else>
         <button class="home__retry" @click="getCountries">Retry</button>
@@ -28,8 +20,8 @@
 <script>
 import { $getCountries } from '@/api'
 import Filter from '@/components/Home/Filter'
+import CountriesList from '@/components/Home/Countries'
 import SearchInput from '@/components/Home/SearchInput'
-import CountryCard from '@/components/Home/CountryCard'
 
 export default {
   name: 'Home',
@@ -37,7 +29,7 @@ export default {
   components: {
     Filter,
     SearchInput,
-    CountryCard,
+    CountriesList,
   },
 
   data: () => ({

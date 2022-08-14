@@ -14,6 +14,7 @@
     background-color: white;
     padding: $size-24 $size-12;
     box-shadow: 0 0 $size-24 rgba(black, .1);
+    z-index: 2;
   }
 
   &__content-title {

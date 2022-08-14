@@ -5,10 +5,16 @@
   background-color: $white;
   border-radius: $size-4;
   overflow: hidden;
+  min-height: 326px;
 
   &__flag {
     width: 100%;
-    min-height: 180px;
+    height: 212px;
+    overflow: hidden;
+  }
+
+  &__flag-photo {
+    width: 100%;
   }
 
   &__info {

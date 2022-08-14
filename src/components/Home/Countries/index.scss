@@ -1,0 +1,11 @@
+@import '@/assets/styles/_variables';
+
+.countries {
+  position: relative;
+  height: 30rem;
+  margin-top: $size-48;
+}
+
+.scroller {
+  height: 100%;
+}
