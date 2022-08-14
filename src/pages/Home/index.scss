@@ -1,0 +1,23 @@
+@import '@/assets/styles/_variables';
+
+.home {
+  &__loading {
+    display: block;
+    text-align: center;
+    margin-top: $size-80;
+  }
+
+  &__country {
+    margin-top: $size-24;
+  }
+
+  &__retry {
+    display: block;
+    padding: $size-12 $size-24;
+    background-color: $gray-050;
+    border: none;
+    outline: none !important;
+    margin: $size-80 auto 0 auto;
+    border-radius: $size-4;
+  }
+}
