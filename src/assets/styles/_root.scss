@@ -1,0 +1,49 @@
+:root {
+  --white: #ffffff;
+  --gray-050: #f5f5f5;
+  --gray-100: #e5e5e5;
+  --gray-200: #cccccc;
+  --gray-300: #b2b2b2;
+  --gray-400: #999999;
+  --gray-500: #7f7f7f;
+  --gray-600: #666666;
+  --gray-700: #4c4c4c;
+  --gray-800: #333333;
+  --gray-900: #262626;
+  --black: #000000;
+
+  --size-2: #{rem(2px)};
+  --size-3: #{rem(3px)};
+  --size-4: #{rem(4px)};
+  --size-8: #{rem(8px)};
+  --size-10: #{rem(10px)};
+  --size-12: #{rem(12px)};
+  --size-14: #{rem(14px)};
+  --size-16: #{rem(16px)};
+  --size-18: #{rem(18px)};
+  --size-20: #{rem(20px)};
+  --size-24: #{rem(24px)};
+  --size-28: #{rem(28px)};
+  --size-32: #{rem(32px)};
+  --size-36: #{rem(36px)};
+  --size-40: #{rem(40px)};
+  --size-44: #{rem(44px)};
+  --size-48: #{rem(48px)};
+  --size-52: #{rem(52px)};
+  --size-56: #{rem(56px)};
+  --size-60: #{rem(60px)};
+  --size-64: #{rem(64px)};
+  --size-80: #{rem(80px)};
+  --size-96: #{rem(96px)};
+  --size-120: #{rem(120px)};
+
+  --font-10: #{rem(10px)};
+  --font-12: #{rem(12px)};
+  --font-14: #{rem(14px)};
+  --font-16: #{rem(16px)};
+  --font-18: #{rem(18px)};
+  --font-22: #{rem(22px)};
+  --font-32: #{rem(32px)};
+  --font-48: #{rem(48px)};
+  --font-64: #{rem(64px)};
+}
