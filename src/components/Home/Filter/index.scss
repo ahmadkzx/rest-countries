@@ -1,0 +1,29 @@
+@import '@/assets/styles/_variables';
+
+.filter {
+  width: 15rem;
+  margin-top: $size-24;
+
+  &__current, &__list {
+    box-shadow: 0 0 $size-18 rgba(black, .08);
+    background-color: $white;
+    border-radius: $size-4;
+  }
+
+  &__current {
+    padding: $size-24 $size-28;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__list {
+    padding: $size-8 0;
+    list-style: none;
+    margin-top: $size-8;
+  }
+
+  &__list-item {
+    padding: $size-12 $size-24;
+  }
+}
