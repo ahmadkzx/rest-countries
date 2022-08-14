@@ -1,0 +1,27 @@
+@import '@/assets/styles/_variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $size-24 $size-12;
+  box-shadow: 0 0 $size-24 rgba(black, .1);
+
+  &__title {
+    font-size: $size-18;
+  }
+
+  &__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    outline: none;
+  }
+
+  &__theme-toggle-text {
+    display: block;
+    margin-left: $size-8;
+  }
+}

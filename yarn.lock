@@ -3089,6 +3089,11 @@ css-what@^6.0.1:
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-6.1.0.tgz#fb5effcf76f1ddea2c81bdfaa4de44e79bac70f4"
   integrity sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==
 
+css.gg@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/css.gg/-/css.gg-2.0.0.tgz#1ba891092ceac58a2550540171c2d469a86b27b2"
+  integrity sha512-8qO59kSXLbewo7xaUM4eC8328MTdGmb8atpmw6PRzeDGsZrCkAVjJzKeFDIntagl1/aCee+NG1OQtIvWAjgG/A==
+
 cssesc@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/cssesc/-/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
