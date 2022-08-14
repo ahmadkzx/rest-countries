@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="home">
-      <SearchInput v-model="searchQuery" />
-      <RegionFilter v-model="regionFilter" />
+      <SearchInput v-model="filters.q" />
+      <RegionFilter v-model="filters.region" />
 
       <template v-if="isLoading">
         <span class="home__loading">Loading...</span>
@@ -34,25 +34,27 @@ export default {
 
   data: () => ({
     countries: null,
-    searchQuery: '',
     isLoading: false,
-    regionFilter: null,
     isHaveError: false,
+    filters: {
+      q: '',
+      region: null,
+    },
   }),
 
   computed: {
     filteredCountries() {
       let countries = this.countries
 
-      if (this.searchQuery.trim().length > 0 || this.regionFilter) {
+      if (this.filters.q.trim().length > 0 || this.filters.region) {
         countries = countries.filter((country) => {
           let isValid = true
 
-          if (this.regionFilter)
-            isValid = country.region.toLowerCase() == this.regionFilter.toLowerCase()
+          if (this.filters.region)
+            isValid = country.region.toLowerCase() == this.filters.region.toLowerCase()
 
-          if (this.searchQuery.trim().length > 0)
-            isValid = country.name.toLowerCase().indexOf(this.searchQuery.toLowerCase()) >= 0
+          if (this.filters.q.trim().length > 0)
+            isValid = country.name.toLowerCase().indexOf(this.filters.q.toLowerCase()) >= 0
 
           return isValid ? country : false
         })
@@ -86,8 +88,8 @@ export default {
     },
 
     applyFiltersFromUrl() {
-      this.searchQuery = this.$route.query.q || ''
-      this.regionFilter = this.$route.query.region || ''
+      this.filters.q = this.$route.query.q || ''
+      this.filters.region = this.$route.query.region || ''
     },
   },
 }
