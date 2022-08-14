@@ -1,0 +1,29 @@
+@import '@/assets/styles/_variables';
+
+.country {
+  box-shadow: 0 0 $size-18 rgba(black, .08);
+  background-color: $white;
+  border-radius: $size-4;
+  overflow: hidden;
+
+  &__flag {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  &__info {
+    padding: $size-12 $size-18;
+  }
+
+  &__info-name {
+    font-size: $size-18;
+    margin-bottom: $size-16;
+  }
+
+  &__info-row-key {
+    display: inline-block;
+    margin-right: $size-8;
+    font-weight: 500;
+    margin-top: $size-12;
+  }
+}
