@@ -1,0 +1,27 @@
+@import '@/assets/styles/_variables';
+
+.search-input {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: $size-24 $size-28;
+  box-shadow: 0 0 $size-18 rgba(black, .08);
+  background-color: $white;
+  margin-top: $size-56;
+  border-radius: $size-4;
+
+  &__input {
+    flex-grow: 1;
+    border: none;
+    margin-left: $size-16;
+    outline: none !important;
+  }
+
+  &__input::placeholder {
+    color: $gray-500;
+  }
+
+  &__icon {
+    color: $gray-500;
+  }
+}
