@@ -1,3 +1,5 @@
+@import '@/assets/styles/_breakpoints';
+
 @mixin btn {
   padding: var(--size-12) var(--size-18);
   box-shadow: 0 0 var(--size-18) rgba(black, .08);
@@ -61,6 +63,11 @@
   }
 
   &__country-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
     margin-top: var(--size-24);
   }
 
@@ -87,5 +94,31 @@
     @include btn;
     display: inline-block;
     margin: 0 var(--size-8) var(--size-8) 0;
+  }
+
+  @include media-breakpoint-up('lg') {
+    &__country-flag {
+      width: 35rem;
+    }
+
+    &__country-info {
+      height: 9rem;
+    }
+  }
+
+  @include media-breakpoint-up('xl') {
+    &__country {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    &__country-flag {
+      margin-right: var(--size-48);
+    }
+
+    &__country-borders {
+      margin-top: var(--size-56);
+    }
   }
 }

@@ -22,30 +22,32 @@
             />
           </div>
 
-          <h2 class="country-page__country-name">{{ country.name }}</h2>
+          <div>
+            <h2 class="country-page__country-name">{{ country.name }}</h2>
 
-          <div class="country-page__country-info">
-            <div
-              v-for="(info, index) in countryInfo"
-              :key="'info-' + index"
-              class="country-page__country-info-row"
-            >
-              <span class="country-page__country-info-row-key">{{ info.key }}:</span>
-              <span class="country-page__country-info-row-value">{{ info.value }}</span>
-            </div>
-          </div>
-
-          <div v-if="country.borders" class="country-page__country-borders">
-            <span class="country-page__country-borders-title">Border Countries:</span>
-            <div class="country-page__country-borders-items">
-              <router-link
-                class="country-page__country-borders-items-country"
-                v-for="borderCountry in country.borders"
-                :key="'border-' + borderCountry"
-                :to="'/' + borderCountry"
+            <div class="country-page__country-info">
+              <div
+                v-for="(info, index) in countryInfo"
+                :key="'info-' + index"
+                class="country-page__country-info-row"
               >
-                {{ borderCountry }}
-              </router-link>
+                <span class="country-page__country-info-row-key">{{ info.key }}:</span>
+                <span class="country-page__country-info-row-value">{{ info.value }}</span>
+              </div>
+            </div>
+
+            <div v-if="country.borders" class="country-page__country-borders">
+              <span class="country-page__country-borders-title">Border Countries:</span>
+              <div class="country-page__country-borders-items">
+                <router-link
+                  class="country-page__country-borders-items-country"
+                  v-for="borderCountry in country.borders"
+                  :key="'border-' + borderCountry"
+                  :to="'/' + borderCountry"
+                >
+                  {{ borderCountry }}
+                </router-link>
+              </div>
             </div>
           </div>
         </div>
