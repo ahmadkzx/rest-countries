@@ -29,6 +29,9 @@
   &__info-name {
     font-size: var(--size-18);
     margin-bottom: var(--size-16);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   &__info-row-key {

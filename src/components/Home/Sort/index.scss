@@ -19,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   &__list {
@@ -32,6 +33,12 @@
   }
 
   &__list-item {
+    cursor: pointer;
+    transition: background 250ms;
     padding: var(--size-12) var(--size-24);
+  }
+
+  &__list-item:hover {
+    background-color: var(--background-color);
   }
 }

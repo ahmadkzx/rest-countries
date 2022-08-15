@@ -1,10 +1,14 @@
 <template>
   <div class="container">
     <div class="home">
-      <SearchInput v-model="filters.q" />
-      <div class="home__filters">
-        <RegionFilter v-model="filters.region" />
-        <Sort v-model="filters.sort" />
+      <div class="home__header">
+        <div class="home__header-search">
+          <SearchInput v-model="filters.q" />
+        </div>
+        <div class="home__header-filters">
+          <RegionFilter v-model="filters.region" />
+          <Sort v-model="filters.sort" />
+        </div>
       </div>
 
       <template v-if="isLoading">
