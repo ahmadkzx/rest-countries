@@ -1,17 +1,27 @@
 <template>
   <header class="header">
     <div class="header__content">
-      <h1 class="header__content-title">Where in the world?</h1>
+      <div class="container header__content-container">
+        <h1 class="header__content-title">Where in the world?</h1>
 
-      <button v-if="theme == 'light'" class="header__content-theme-toggle" @click="theme = 'dark'">
-        <i class="gg-moon"></i>
-        <span class="header__content-theme-toggle-text">Dark Mode</span>
-      </button>
+        <button
+          v-if="theme == 'light'"
+          class="header__content-theme-toggle"
+          @click="theme = 'dark'"
+        >
+          <i class="gg-moon"></i>
+          <span class="header__content-theme-toggle-text">Dark Mode</span>
+        </button>
 
-      <button v-if="theme == 'dark'" class="header__content-theme-toggle" @click="theme = 'light'">
-        <i class="gg-sun"></i>
-        <span class="header__content-theme-toggle-text">Light Mode</span>
-      </button>
+        <button
+          v-if="theme == 'dark'"
+          class="header__content-theme-toggle"
+          @click="theme = 'light'"
+        >
+          <i class="gg-sun"></i>
+          <span class="header__content-theme-toggle-text">Light Mode</span>
+        </button>
+      </div>
     </div>
 
     <div class="header__backdrop"></div>

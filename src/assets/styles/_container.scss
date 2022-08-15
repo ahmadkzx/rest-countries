@@ -1,4 +1,20 @@
 .container {
   max-width: 340px;
   margin: 0 auto;
+
+  @include media-breakpoint-up('sm') {
+    max-width: 490px;
+  }
+
+  @include media-breakpoint-up('md') {
+    max-width: 760px;
+  }
+
+  @include media-breakpoint-up('lg') {
+    max-width: 920px;
+  }
+
+  @include media-breakpoint-up('xl') {
+    max-width: 1100px;
+  }
 }

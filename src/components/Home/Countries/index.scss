@@ -1,18 +1,30 @@
+@import '@/assets/styles/_breakpoints';
+
 .countries {
   position: relative;
   height: 30rem;
   margin-top: var(--size-48);
 
-  &__wrapper-item {
+  &__wrapper-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__wrapper-row-item {
     display: block;
     text-decoration: none;
   }
-}
 
-.scroller {
-  height: 100%;
-}
+  @include media-breakpoint-up('md') {
+    &__wrapper-row-item {
+      width: 49%;
+    }
+  }
 
-.vue-recycle-scroller__item-wrapper {
-  overflow-x: visible;
+  @include media-breakpoint-up('lg') {
+    &__wrapper-row-item {
+      width: 32%;
+    }
+  }
 }

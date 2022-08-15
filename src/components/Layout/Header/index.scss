@@ -6,13 +6,16 @@
     width: 100%;
     top: 0;
     right: 0;
+    background-color: var(--section-background-color);
+    padding: var(--size-24) 0;
+    box-shadow: 0 0 var(--size-24) rgba(black, .1);
+    z-index: 3;
+  }
+
+  &__content-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--section-background-color);
-    padding: var(--size-24) var(--size-12);
-    box-shadow: 0 0 var(--size-24) rgba(black, .1);
-    z-index: 3;
   }
 
   &__content-title {
