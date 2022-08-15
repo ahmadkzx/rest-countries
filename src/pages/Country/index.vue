@@ -36,16 +36,16 @@
               </div>
             </div>
 
-            <div v-if="country.borders" class="country-page__country-borders">
+            <div v-if="borderCountries" class="country-page__country-borders">
               <span class="country-page__country-borders-title">Border Countries:</span>
               <div class="country-page__country-borders-items">
                 <router-link
                   class="country-page__country-borders-items-country"
-                  v-for="borderCountry in country.borders"
+                  v-for="borderCountry in borderCountries"
                   :key="'border-' + borderCountry"
-                  :to="'/' + borderCountry"
+                  :to="'/' + borderCountry.alpha3Code"
                 >
-                  {{ borderCountry }}
+                  {{ borderCountry.name }}
                 </router-link>
               </div>
             </div>
@@ -61,7 +61,7 @@
 </template>
 
 <script>
-import { $getCountry } from '@/api'
+import { $getCountry, $getCountries } from '@/api'
 import { _separateNumber } from '@/assets/js/utils'
 
 export default {
@@ -71,6 +71,7 @@ export default {
     country: null,
     isLoading: false,
     isHaveError: false,
+    borderCountries: null,
   }),
 
   computed: {
@@ -110,11 +111,24 @@ export default {
         const result = await $getCountry(this.$route.params.code)
 
         this.country = result.data
+        if (this.country.borders?.length > 0) this.getBorderCountries()
       } catch (err) {
         this.isHaveError = true
         console.error('[Error On Get Country]: ', err)
       } finally {
         this.isLoading = false
+      }
+    },
+
+    async getBorderCountries() {
+      // getCountry api only returns 3 letter code of border countries for display border countries name we need to get full data
+      try {
+        const codes = this.country.borders.join(',') // example: IRN,DZA
+        const result = await $getCountries(codes)
+
+        this.borderCountries = result.data
+      } catch (err) {
+        console.error('[Error On Get Border Countries]: ', err)
       }
     },
   },

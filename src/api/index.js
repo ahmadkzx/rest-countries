@@ -12,7 +12,7 @@ function getInstance() {
   return instance
 }
 
-export function $getCountries() {
+export function $getAllCountries() {
   const instance = getInstance()
 
   return instance.request({
@@ -27,5 +27,14 @@ export function $getCountry(code) {
   return instance.request({
     method: 'get',
     url: `/v2/alpha/${code}`,
+  })
+}
+
+export function $getCountries(codes) {
+  const instance = getInstance()
+
+  return instance.request({
+    method: 'get',
+    url: `/v2/alpha?codes=${codes}`,
   })
 }

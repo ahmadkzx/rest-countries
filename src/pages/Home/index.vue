@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { $getCountries } from '@/api'
+import { $getAllCountries } from '@/api'
 import Sort from '@/components/Home/Sort'
 import CountriesList from '@/components/Home/Countries'
 import SearchInput from '@/components/Home/SearchInput'
@@ -100,7 +100,7 @@ export default {
         this.isLoading = true
         this.isHaveError = false
 
-        const result = await $getCountries()
+        const result = await $getAllCountries()
 
         this.countries = result.data
       } catch (err) {
