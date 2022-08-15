@@ -1,3 +1,4 @@
+@import '@/assets/styles/_skeleton';
 @import '@/assets/styles/_breakpoints';
 
 @mixin btn {
@@ -93,15 +94,23 @@
     margin-top: var(--size-12);
   }
 
-  &__country-borders-items-country {
+  &__country-borders-items-country, &__country-borders-items-country--skeleton {
     @include btn;
     display: inline-block;
     margin: 0 var(--size-8) var(--size-8) 0;
   }
 
+  &__country-borders-items-country--skeleton {
+    @include skeleton;
+    padding: 0;
+    width: var(--size-96);
+    height: var(--size-36);
+  }
+
   @include media-breakpoint-up('lg') {
     &__country-flag {
       width: 35rem;
+      min-width: 35rem;
     }
 
     &__country-info {

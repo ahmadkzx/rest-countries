@@ -36,17 +36,33 @@
               </div>
             </div>
 
-            <div v-if="borderCountries" class="country-page__country-borders">
+            <div class="country-page__country-borders">
               <span class="country-page__country-borders-title">Border Countries:</span>
               <div class="country-page__country-borders-items">
-                <router-link
-                  class="country-page__country-borders-items-country"
-                  v-for="borderCountry in borderCountries"
-                  :key="'border-' + borderCountry"
-                  :to="'/' + borderCountry.alpha3Code"
-                >
-                  {{ borderCountry.name }}
-                </router-link>
+                <template v-if="!isLoadingBorderCountries">
+                  <router-link
+                    class="country-page__country-borders-items-country"
+                    v-for="borderCountry in borderCountries"
+                    :key="'border-' + borderCountry.alpha3Code"
+                    :to="'/' + borderCountry.alpha3Code"
+                  >
+                    {{ borderCountry.name }}
+                  </router-link>
+
+                  <!-- <div
+                    v-for="i in 7"
+                    :key="i"
+                    class="country-page__country-borders-items-country--skeleton"
+                  ></div> -->
+                </template>
+
+                <template v-else>
+                  <div
+                    v-for="i in 7"
+                    :key="i"
+                    class="country-page__country-borders-items-country--skeleton"
+                  ></div>
+                </template>
               </div>
             </div>
           </div>
@@ -72,6 +88,7 @@ export default {
     isLoading: false,
     isHaveError: false,
     borderCountries: null,
+    isLoadingBorderCountries: true,
   }),
 
   computed: {
@@ -104,7 +121,6 @@ export default {
   methods: {
     async getCountry() {
       try {
-        if (this.isLoading) return
         this.isLoading = true
         this.isHaveError = false
 
@@ -123,12 +139,15 @@ export default {
     async getBorderCountries() {
       // getCountry api only returns 3 letter code of border countries for display border countries name we need to get full data
       try {
+        this.isLoadingBorderCountries = true
         const codes = this.country.borders.join(',') // example: IRN,DZA
         const result = await $getCountries(codes)
 
         this.borderCountries = result.data
       } catch (err) {
         console.error('[Error On Get Border Countries]: ', err)
+      } finally {
+        this.isLoadingBorderCountries = false
       }
     },
   },

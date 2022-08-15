@@ -1,0 +1,27 @@
+@mixin skeleton {
+  position: relative;
+  overflow: hidden;
+  cursor: wait;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: linear-gradient(90deg, transparent, rgba(black, 0.15), transparent);
+    animation: wave 1.5s linear 0.5s infinite;
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: translateX(100%);
+  }
+  
+  100% {
+    transform: translateX(-100%);
+  }
+}
