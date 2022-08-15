@@ -15,7 +15,11 @@
       <template v-else-if="!isLoading && !isHaveError && country">
         <div class="country-page__country">
           <div class="country-page__country-flag">
-            <img :src="country.flags.svg" alt="" class="country-page__country-flag-photo" />
+            <img
+              :src="country.flags.svg"
+              :alt="country.name"
+              class="country-page__country-flag-photo"
+            />
           </div>
 
           <h2 class="country-page__country-name">{{ country.name }}</h2>
@@ -56,6 +60,7 @@
 
 <script>
 import { $getCountry } from '@/api'
+import { _separateNumber } from '@/assets/js/utils'
 
 export default {
   name: 'CountryPage',
@@ -72,7 +77,7 @@ export default {
 
       return [
         { key: 'Native Name', value: this.country.nativeName },
-        { key: 'Population', value: this.country.population },
+        { key: 'Population', value: _separateNumber(this.country.population) },
         { key: 'Region', value: this.country.region },
         { key: 'Sub Region', value: this.country.subregion },
         { key: 'Capital', value: this.country.capital },

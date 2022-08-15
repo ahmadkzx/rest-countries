@@ -9,7 +9,7 @@
 
       <div class="country__info-row">
         <span class="country__info-row-key">Population:</span>
-        <span class="country__info-row-value">{{ population }}</span>
+        <span class="country__info-row-value">{{ separatedPopulation }}</span>
       </div>
 
       <div class="country__info-row">
@@ -26,6 +26,8 @@
 </template>
 
 <script>
+import { _separateNumber } from '@/assets/js/utils'
+
 export default {
   name: 'CountryCard',
 
@@ -53,6 +55,12 @@ export default {
     flagUrl: {
       type: String,
       required: true,
+    },
+  },
+
+  computed: {
+    separatedPopulation() {
+      return _separateNumber(this.population)
     },
   },
 }
