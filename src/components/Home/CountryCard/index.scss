@@ -1,9 +1,7 @@
-@import '@/assets/styles/_variables';
-
 .country {
-  box-shadow: 0 0 $size-18 rgba(black, .1);
-  background-color: var(--bg);
-  border-radius: $size-4;
+  box-shadow: 0 0 var(--size-18) rgba(black, .1);
+  background-color: var(--background-color);
+  border-radius: var(--size-4);
   overflow: hidden;
   min-height: 326px;
 
@@ -18,18 +16,18 @@
   }
 
   &__info {
-    padding: $size-12 $size-18;
+    padding: var(--size-12) var(--size-18);
   }
 
   &__info-name {
-    font-size: $size-18;
-    margin-bottom: $size-16;
+    font-size: var(--size-18);
+    margin-bottom: var(--size-16);
   }
 
   &__info-row-key {
     display: inline-block;
-    margin-right: $size-8;
+    margin-right: var(--size-8);
     font-weight: 500;
-    margin-top: $size-12;
+    margin-top: var(--size-12);
   }
 }

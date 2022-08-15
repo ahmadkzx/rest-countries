@@ -1,5 +1,3 @@
-@import '@/assets/styles/_variables';
-
 .header {
   width: 100%;
 
@@ -11,14 +9,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--section-bg);
-    padding: $size-24 $size-12;
-    box-shadow: 0 0 $size-24 rgba(black, .1);
+    background-color: var(--section-background-color);
+    padding: var(--size-24) var(--size-12);
+    box-shadow: 0 0 var(--size-24) rgba(black, .1);
     z-index: 3;
   }
 
   &__content-title {
-    font-size: $size-18;
+    font-size: var(--size-18);
   }
 
   &__content-theme-toggle {
@@ -28,15 +26,15 @@
     background: none;
     border: none;
     outline: none;
-    height: $size-24;
+    height: var(--size-24);
   }
 
   &__content-theme-toggle-text {
     display: block;
-    margin-left: $size-8;
+    margin-left: var(--size-8);
   }
 
   &__backdrop {
-    height: $size-96;
+    height: var(--size-96);
   }
 }

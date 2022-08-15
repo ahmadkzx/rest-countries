@@ -1,19 +1,17 @@
-@import '@/assets/styles/_variables';
-
 .home {
   &__loading {
     display: block;
     text-align: center;
-    margin-top: $size-80;
+    margin-top: var(--size-80);
   }
 
   &__retry {
     display: block;
-    padding: $size-12 $size-24;
-    background-color: var(--section-bg);
+    padding: var(--size-12) var(--size-24);
+    background-color: var(--section-background-color);
     border: none;
     outline: none !important;
-    margin: $size-80 auto 0 auto;
-    border-radius: $size-4;
+    margin: var(--size-80) auto 0 auto;
+    border-radius: var(--size-4);
   }
 }

@@ -1,18 +1,16 @@
-@import '@/assets/styles/_variables';
-
 .filter {
   position: relative;
   width: 15rem;
-  margin-top: $size-24;
+  margin-top: var(--size-24);
 
   &__current, &__list {
-    box-shadow: 0 0 $size-18 rgba(black, .08);
-    background-color: var(--section-bg);
-    border-radius: $size-4;
+    box-shadow: 0 0 var(--size-18) rgba(black, .08);
+    background-color: var(--section-background-color);
+    border-radius: var(--size-4);
   }
 
   &__current {
-    padding: $size-24 $size-28;
+    padding: var(--size-24) var(--size-28);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -21,14 +19,14 @@
   &__list {
     position: absolute;
     width: 100%;
-    top: calc(100% + $size-8);
+    top: calc(100% + var(--size-8));
     left: 0;
-    padding: $size-8 0;
+    padding: var(--size-8) 0;
     list-style: none;
     z-index: 2;
   }
 
   &__list-item {
-    padding: $size-12 $size-24;
+    padding: var(--size-12) var(--size-24);
   }
 }

@@ -1,27 +1,25 @@
-@import '@/assets/styles/_variables';
-
 .search-input {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: $size-24 $size-28;
-  box-shadow: 0 0 $size-18 rgba(black, .08);
-  background-color: var(--section-bg);
-  border-radius: $size-4;
+  padding: var(--size-24) var(--size-28);
+  box-shadow: 0 0 var(--size-18) rgba(black, .08);
+  background-color: var(--section-background-color);
+  border-radius: var(--size-4);
 
   &__input {
     flex-grow: 1;
     border: none;
-    margin-left: $size-16;
+    margin-left: var(--size-16);
     outline: none !important;
     background: none;
   }
 
   &__input::placeholder {
-    color: $gray-500;
+    color: var(--text-placeholder-color);
   }
 
   &__icon {
-    color: $gray-500;
+    color: var(--text-placeholder-color);
   }
 }

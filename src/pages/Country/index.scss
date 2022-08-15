@@ -1,10 +1,8 @@
-@import '@/assets/styles/_variables';
-
 @mixin btn {
-  padding: $size-12 $size-18;
-  box-shadow: 0 0 $size-18 rgba(black, .08);
-  background-color: var(--section-bg);
-  border-radius: $size-4;
+  padding: var(--size-12) var(--size-18);
+  box-shadow: 0 0 var(--size-18) rgba(black, .08);
+  background-color: var(--section-background-color);
+  border-radius: var(--size-4);
   text-decoration: none;
 }
 
@@ -12,7 +10,7 @@
 
   &__back {
     @include btn;
-    width: $size-120;
+    width: var(--size-120);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,24 +24,24 @@
   &__loading {
     display: block;
     text-align: center;
-    margin-top: $size-80;
+    margin-top: var(--size-80);
   }
 
   &__retry {
     display: block;
-    padding: $size-12 $size-24;
-    background-color: var(--section-bg);
+    padding: var(--size-12) var(--size-24);
+    background-color: var(--section-background-color);
     border: none;
     outline: none !important;
-    margin: $size-80 auto 0 auto;
-    border-radius: $size-4;
+    margin: var(--size-80) auto 0 auto;
+    border-radius: var(--size-4);
   }
 
   &__country-flag {
     width: 100%;
     height: 212px;
     overflow: hidden;
-    margin-top: $size-32;
+    margin-top: var(--size-32);
   }
 
   &__country-flag-photo {
@@ -51,23 +49,23 @@
   }
 
   &__country-name {
-    margin-top: $size-24;
-    font-size: $size-24;
+    margin-top: var(--size-24);
+    font-size: var(--size-24);
   }
 
   &__country-info {
-    margin-top: $size-24;
+    margin-top: var(--size-24);
   }
 
   &__country-info-row-key {
     display: inline-block;
-    margin-right: $size-8;
+    margin-right: var(--size-8);
     font-weight: 500;
-    margin-top: $size-12;
+    margin-top: var(--size-12);
   }
 
   &__country-borders {
-    margin-top: $size-24;
+    margin-top: var(--size-24);
   }
 
   &__country-borders-title {
@@ -75,12 +73,12 @@
   }
 
   &__country-borders-items {
-    margin-top: $size-12;
+    margin-top: var(--size-12);
   }
 
   &__country-borders-items-country {
     @include btn;
     display: inline-block;
-    margin: 0 $size-8 $size-8 0;
+    margin: 0 var(--size-8) var(--size-8) 0;
   }
 }
