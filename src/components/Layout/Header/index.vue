@@ -31,6 +31,10 @@ export default {
       document.documentElement.setAttribute('theme', theme)
     },
   }),
+
+  mounted() {
+    document.documentElement.setAttribute('theme', this.theme)
+  },
 }
 </script>
 
