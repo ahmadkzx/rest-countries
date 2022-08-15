@@ -6,17 +6,24 @@
   min-height: 326px;
 
   &__flag {
+    position: relative;
     width: 100%;
-    height: 212px;
+    min-height: 225px;
+    aspect-ratio: 3 / 2;
     overflow: hidden;
+    border-radius: var(--size-4) var(--size-4) 0 0;
   }
 
   &__flag-photo {
-    width: 100%;
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   &__info {
-    padding: var(--size-12) var(--size-18);
+    padding: var(--size-18);
   }
 
   &__info-name {

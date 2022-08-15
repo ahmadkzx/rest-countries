@@ -4,8 +4,8 @@
       <RecycleScroller
         class="scroller"
         :items="countries"
-        :item-size="378"
-        :buffer="400"
+        :item-size="400"
+        :buffer="1000"
         key-field="numericCode"
         page-mode
         v-slot="{ item }"
