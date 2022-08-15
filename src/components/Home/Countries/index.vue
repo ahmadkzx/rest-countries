@@ -10,7 +10,7 @@
         page-mode
         v-slot="{ item }"
       >
-        <router-link class="countries__wrapper-item" :to="'/' + item.name">
+        <router-link class="countries__wrapper-item" :to="'/' + item.alpha3Code">
           <CountryCard
             :name="item.name"
             :population="item.population"

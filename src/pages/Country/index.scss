@@ -1,0 +1,87 @@
+@import '@/assets/styles/_variables';
+
+@mixin btn {
+  padding: $size-12 $size-18;
+  box-shadow: 0 0 $size-18 rgba(black, .08);
+  background-color: $white;
+  border-radius: $size-4;
+  color: $black;
+  text-decoration: none;
+}
+
+.country-page {
+
+  &__back {
+    @include btn;
+    width: $size-120;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__back-icon {
+    display: inline-block;
+    margin-right: .5rem;
+  }
+
+  &__loading {
+    display: block;
+    text-align: center;
+    margin-top: $size-80;
+  }
+
+  &__retry {
+    display: block;
+    padding: $size-12 $size-24;
+    background-color: $gray-050;
+    border: none;
+    outline: none !important;
+    margin: $size-80 auto 0 auto;
+    border-radius: $size-4;
+  }
+
+  &__country-flag {
+    width: 100%;
+    height: 212px;
+    overflow: hidden;
+    margin-top: $size-32;
+  }
+
+  &__country-flag-photo {
+    width: 100%;
+  }
+
+  &__country-name {
+    margin-top: $size-24;
+    font-size: $size-24;
+  }
+
+  &__country-info {
+    margin-top: $size-24;
+  }
+
+  &__country-info-row-key {
+    display: inline-block;
+    margin-right: $size-8;
+    font-weight: 500;
+    margin-top: $size-12;
+  }
+
+  &__country-borders {
+    margin-top: $size-24;
+  }
+
+  &__country-borders-title {
+    font-weight: 500;
+  }
+
+  &__country-borders-items {
+    margin-top: $size-12;
+  }
+
+  &__country-borders-items-country {
+    @include btn;
+    display: inline-block;
+    margin: 0 $size-8 $size-8 0;
+  }
+}

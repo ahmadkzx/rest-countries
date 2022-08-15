@@ -1,4 +1,5 @@
 import HomePage from '@/pages/Home'
+import CountryPage from '@/pages/Country'
 import { createRouter, createWebHistory } from 'vue-router'
 
 export default createRouter({
@@ -7,6 +8,10 @@ export default createRouter({
     {
       path: '/',
       component: HomePage,
+    },
+    {
+      path: '/:code',
+      component: CountryPage,
     },
   ],
 })
