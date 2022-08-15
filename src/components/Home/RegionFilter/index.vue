@@ -1,12 +1,14 @@
 <template>
   <div class="filter" @click.stop>
+    <span class="filter__title">Region:</span>
+
     <div class="filter__current" @click="toggleList">
-      <span class="filter__current-title">{{ modelValue ? modelValue : 'Filter by Region' }}</span>
+      <span class="filter__current-title">{{ modelValue }}</span>
       <i class="filter__current-icon gg-chevron-down"></i>
     </div>
 
     <ul v-if="isShowList" class="filter__list">
-      <li class="filter__list-item" @click="updateModelValue(null)">All</li>
+      <li class="filter__list-item" @click="updateModelValue('All')">All</li>
       <li class="filter__list-item" @click="updateModelValue('Africa')">Africa</li>
       <li class="filter__list-item" @click="updateModelValue('Americas')">Americas</li>
       <li class="filter__list-item" @click="updateModelValue('Asia')">Asia</li>

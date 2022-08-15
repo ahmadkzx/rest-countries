@@ -2,7 +2,10 @@
   <div class="container">
     <div class="home">
       <SearchInput v-model="filters.q" />
-      <RegionFilter v-model="filters.region" />
+      <div class="home__filters">
+        <RegionFilter v-model="filters.region" />
+        <Sort v-model="filters.sort" />
+      </div>
 
       <template v-if="isLoading">
         <span class="home__loading">Loading...</span>
@@ -19,6 +22,7 @@
 
 <script>
 import { $getCountries } from '@/api'
+import Sort from '@/components/Home/Sort'
 import CountriesList from '@/components/Home/Countries'
 import SearchInput from '@/components/Home/SearchInput'
 import RegionFilter from '@/components/Home/RegionFilter'
@@ -27,6 +31,7 @@ export default {
   name: 'Home',
 
   components: {
+    Sort,
     SearchInput,
     RegionFilter,
     CountriesList,
@@ -38,7 +43,8 @@ export default {
     isHaveError: false,
     filters: {
       q: '',
-      region: null,
+      sort: 'Name',
+      region: 'All',
     },
   }),
 
@@ -50,7 +56,7 @@ export default {
         countries = countries.filter((country) => {
           let isValid = true
 
-          if (this.filters.region)
+          if (this.filters.region != 'All')
             isValid = isValid && country.region.toLowerCase() == this.filters.region.toLowerCase()
 
           if (this.filters.q.trim().length > 0)
@@ -58,6 +64,14 @@ export default {
               isValid && country.name.toLowerCase().indexOf(this.filters.q.toLowerCase()) >= 0
 
           return isValid ? country : false
+        })
+      }
+
+      if (this.filters.sort == 'Population') {
+        countries.sort((a, b) => {
+          if (a.population > b.population) return -1
+          else if (a.population < b.population) return 1
+          return 0
         })
       }
 
@@ -90,7 +104,8 @@ export default {
 
     applyFiltersFromUrl() {
       this.filters.q = this.$route.query.q || ''
-      this.filters.region = this.$route.query.region || ''
+      this.filters.sort = this.$route.query.sort || 'Name'
+      this.filters.region = this.$route.query.region || 'All'
     },
   },
 }
