@@ -2,10 +2,10 @@
   <div class="country-page">
     <div class="container">
       <div>
-        <router-link class="country-page__back" to="/">
+        <button class="country-page__back" @click="$router.go(-1)">
           <i class="gg-arrow-left country-page__back-icon"></i>
           Back
-        </router-link>
+        </button>
       </div>
 
       <template v-if="isLoading">

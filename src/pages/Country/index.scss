@@ -6,12 +6,15 @@
   background-color: var(--section-background-color);
   border-radius: var(--size-4);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .country-page {
 
   &__back {
     @include btn;
+    border: none;
+    outline: none !important;
     width: var(--size-120);
     display: flex;
     align-items: center;
