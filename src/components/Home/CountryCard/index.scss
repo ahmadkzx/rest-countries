@@ -1,3 +1,5 @@
+@import '@/assets/styles/_breakpoints';
+
 .country {
   box-shadow: 0 0 var(--size-18) rgba(black, .1);
   background-color: var(--background-color);
@@ -39,5 +41,23 @@
     margin-right: var(--size-8);
     font-weight: 500;
     margin-top: var(--size-12);
+  }
+
+  @include media-breakpoint-up('sm') {
+    &__flag {
+      min-height: 326px;
+    }
+  }
+  
+  @include media-breakpoint-up('md') {
+    &__flag {
+      min-height: 249px;
+    }
+  }
+
+  @include media-breakpoint-up('lg') {
+    &__flag {
+      min-height: 225px;
+    }
   }
 }
