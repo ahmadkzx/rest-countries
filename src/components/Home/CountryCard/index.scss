@@ -1,8 +1,8 @@
 @import '@/assets/styles/_variables';
 
 .country {
-  box-shadow: 0 0 $size-18 rgba(black, .08);
-  background-color: $white;
+  box-shadow: 0 0 $size-18 rgba(black, .1);
+  background-color: var(--bg);
   border-radius: $size-4;
   overflow: hidden;
   min-height: 326px;

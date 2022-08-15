@@ -7,7 +7,7 @@
 
   &__current, &__list {
     box-shadow: 0 0 $size-18 rgba(black, .08);
-    background-color: $white;
+    background-color: var(--section-bg);
     border-radius: $size-4;
   }
 

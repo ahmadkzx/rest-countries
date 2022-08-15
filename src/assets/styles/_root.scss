@@ -47,3 +47,15 @@
   --font-48: #{rem(48px)};
   --font-64: #{rem(64px)};
 }
+
+[theme="light"] {
+  --bg: var(--white);
+  --section-bg: hsl(0, 0%, 98%);
+  --text-color: hsl(200, 15%, 8%);
+}
+
+[theme="dark"] {
+  --bg: hsl(207, 26%, 17%);
+  --section-bg: hsl(209, 23%, 22%);
+  --text-color: var(--white);
+}

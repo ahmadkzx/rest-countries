@@ -10,7 +10,7 @@
   &__retry {
     display: block;
     padding: $size-12 $size-24;
-    background-color: $gray-050;
+    background-color: var(--section-bg);
     border: none;
     outline: none !important;
     margin: $size-80 auto 0 auto;

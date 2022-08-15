@@ -7,11 +7,14 @@
 
   &__wrapper-item {
     display: block;
-    color: $black;
     text-decoration: none;
   }
 }
 
 .scroller {
   height: 100%;
+}
+
+.vue-recycle-scroller__item-wrapper {
+  overflow-x: visible;
 }
