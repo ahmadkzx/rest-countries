@@ -53,15 +53,20 @@ export default {
       let countries = this.countries
 
       if (this.filters.q.trim().length > 0 || this.filters.region) {
+        const searchQueryCharacters = this.filters.q.toLowerCase().split('')
+
         countries = countries.filter((country) => {
           let isValid = true
 
           if (this.filters.region != 'All')
             isValid = isValid && country.region.toLowerCase() == this.filters.region.toLowerCase()
 
-          if (this.filters.q.trim().length > 0)
+          if (this.filters.q.trim().length > 0) {
+            const countryNameCharacters = country.name.toLowerCase().split('')
+
             isValid =
-              isValid && country.name.toLowerCase().indexOf(this.filters.q.toLowerCase()) >= 0
+              isValid && searchQueryCharacters.every((char) => countryNameCharacters.includes(char))
+          }
 
           return isValid ? country : false
         })
