@@ -80,6 +80,11 @@
     margin-right: var(--size-8);
     font-weight: 500;
     margin-top: var(--size-12);
+    line-height: var(--size-24);
+  }
+
+  &__country-info-row-value {
+    line-height: var(--size-24);
   }
 
   &__country-borders {
