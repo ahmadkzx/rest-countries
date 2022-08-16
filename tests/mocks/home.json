@@ -9,5 +9,11 @@
   },
   "SearchInput": {
     "value": "United"
+  },
+  "RegionFilter": {
+    "value": "Oceania"
+  },
+  "Sort": {
+    "value": "Population"
   }
 }

@@ -53,12 +53,10 @@ export default {
     updateModelValue(filter) {
       this.$emit('update:modelValue', filter)
       this.isShowList = false
-      if (!process.env.JEST_WORKER_ID) {
-        this.$router.replace({
-          path: this.$route.path,
-          query: { ...this.$route.query, region: filter },
-        })
-      }
+      this.$router.replace({
+        path: this.$route.path,
+        query: { ...this.$route.query, region: filter },
+      })
     },
 
     setDocumentClickListener() {

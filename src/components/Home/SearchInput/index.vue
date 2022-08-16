@@ -27,9 +27,7 @@ export default {
     updateModelValue(e) {
       const value = e.target.value
       this.$emit('update:modelValue', value)
-      if (!process.env.JEST_WORKER_ID) {
-        this.$router.replace({ path: this.$route.path, query: { ...this.$route.query, q: value } })
-      }
+      this.$router.replace({ path: this.$route.path, query: { ...this.$route.query, q: value } })
     },
   },
 }

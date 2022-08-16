@@ -39,15 +39,13 @@ export default {
       this.isShowList = !this.isShowList
     },
 
-    updateModelValue(filter) {
-      this.$emit('update:modelValue', filter)
+    updateModelValue(sort) {
+      this.$emit('update:modelValue', sort)
       this.isShowList = false
-      if (!process.env.JEST_WORKER_ID) {
-        this.$router.replace({
-          path: this.$route.path,
-          query: { ...this.$route.query, sort: filter },
-        })
-      }
+      this.$router.replace({
+        path: this.$route.path,
+        query: { ...this.$route.query, sort: sort },
+      })
     },
 
     setDocumentClickListener() {
