@@ -1,25 +1,34 @@
 <template>
   <div class="country">
     <div class="country__flag">
-      <img :src="flagUrl" :alt="name" class="country__flag-photo" />
+      <img
+        :src="flagUrl"
+        :alt="name"
+        class="country__flag-photo"
+        data-test-id="country-card-flag"
+      />
     </div>
 
     <div class="country__info">
-      <h5 class="country__info-name">{{ name }}</h5>
+      <h5 class="country__info-name" data-test-id="country-card-name">{{ name }}</h5>
 
       <div class="country__info-row">
         <span class="country__info-row-key">Population:</span>
-        <span class="country__info-row-value">{{ separatedPopulation }}</span>
+        <span class="country__info-row-value" data-test-id="country-card-population">
+          {{ separatedPopulation }}
+        </span>
       </div>
 
       <div class="country__info-row">
         <span class="country__info-row-key">Region:</span>
-        <span class="country__info-row-value">{{ region }}</span>
+        <span class="country__info-row-value" data-test-id="country-card-region">{{ region }}</span>
       </div>
 
       <div v-if="capital" class="country__info-row">
         <span class="country__info-row-key">Capital:</span>
-        <span class="country__info-row-value">{{ capital }}</span>
+        <span class="country__info-row-value" data-test-id="country-card-capital">
+          {{ capital }}
+        </span>
       </div>
     </div>
   </div>

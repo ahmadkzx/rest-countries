@@ -3,7 +3,9 @@
     <span class="filter__title">Region:</span>
 
     <div class="filter__current" @click="toggleList">
-      <span class="filter__current-title">{{ modelValue }}</span>
+      <span class="filter__current-title" data-test-id="region-filter-current">
+        {{ modelValue }}
+      </span>
       <i class="filter__current-icon gg-chevron-down"></i>
     </div>
 
@@ -13,7 +15,13 @@
       <li class="filter__list-item" @click="updateModelValue('Americas')">Americas</li>
       <li class="filter__list-item" @click="updateModelValue('Asia')">Asia</li>
       <li class="filter__list-item" @click="updateModelValue('Europe')">Europe</li>
-      <li class="filter__list-item" @click="updateModelValue('Oceania')">Oceania</li>
+      <li
+        class="filter__list-item"
+        data-test-id="region-filter-item"
+        @click="updateModelValue('Oceania')"
+      >
+        Oceania
+      </li>
     </ul>
   </div>
 </template>
@@ -43,12 +51,14 @@ export default {
     },
 
     updateModelValue(filter) {
-      this.$router.replace({
-        path: this.$route.path,
-        query: { ...this.$route.query, region: filter },
-      })
       this.$emit('update:modelValue', filter)
       this.isShowList = false
+      if (!process.env.JEST_WORKER_ID) {
+        this.$router.replace({
+          path: this.$route.path,
+          query: { ...this.$route.query, region: filter },
+        })
+      }
     },
 
     setDocumentClickListener() {

@@ -1,0 +1,13 @@
+{
+  "CountryCard": {
+    "name": "Iran",
+    "population": 80000000,
+    "separatedPopulation": "80,000,000",
+    "region": "Asia",
+    "capital": "Tehran",
+    "flagUrl": "https://flagcdn.com/ir.svg"
+  },
+  "SearchInput": {
+    "value": "United"
+  }
+}
