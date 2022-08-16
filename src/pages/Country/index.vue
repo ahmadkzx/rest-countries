@@ -36,7 +36,10 @@
               </div>
             </div>
 
-            <div class="country-page__country-borders">
+            <div
+              v-if="isLoadingBorderCountries || borderCountries"
+              class="country-page__country-borders"
+            >
               <span class="country-page__country-borders-title">Border Countries:</span>
               <div class="country-page__country-borders-items">
                 <template v-if="!isLoadingBorderCountries">
@@ -48,12 +51,6 @@
                   >
                     {{ borderCountry.name }}
                   </router-link>
-
-                  <!-- <div
-                    v-for="i in 7"
-                    :key="i"
-                    class="country-page__country-borders-items-country--skeleton"
-                  ></div> -->
                 </template>
 
                 <template v-else>
@@ -88,7 +85,7 @@ export default {
     isLoading: false,
     isHaveError: false,
     borderCountries: null,
-    isLoadingBorderCountries: true,
+    isLoadingBorderCountries: false,
   }),
 
   computed: {
