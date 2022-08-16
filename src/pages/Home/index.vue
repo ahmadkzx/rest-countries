@@ -70,9 +70,19 @@ export default {
 
             isValid =
               isValid && searchQueryCharacters.every((char) => countryNameCharacters.includes(char))
+
+            country.searchDiff = countryNameCharacters.length - searchQueryCharacters.length
           }
 
-          return isValid ? country : false
+          return isValid
+        })
+      }
+
+      if (this.filters.sort == 'Name') {
+        countries.sort((a, b) => {
+          if (a.searchDiff == 0) return -1
+          else if (a.searchDiff > b.searchDiff) return 1
+          return 0
         })
       }
 
