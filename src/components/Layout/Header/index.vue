@@ -2,7 +2,9 @@
   <header class="header">
     <div class="header__content">
       <div class="container header__content-container">
-        <h1 class="header__content-title">Where in the world?</h1>
+        <router-link to="/">
+          <h1 class="header__content-title">Where in the world?</h1>
+        </router-link>
 
         <button
           v-if="theme == 'light'"
