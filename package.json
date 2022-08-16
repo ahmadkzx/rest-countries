@@ -1,11 +1,13 @@
 {
-  "name": "alibaba",
+  "name": "alibaba-rest-countries",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "docker:build": "docker build -t alibaba-rest-countries .",
+    "docker:run": "docker run -it -p 8000:80 --rm alibaba-rest-countries"
   },
   "dependencies": {
     "axios": "^0.27.2",
