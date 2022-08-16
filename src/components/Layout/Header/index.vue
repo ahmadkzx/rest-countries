@@ -7,6 +7,7 @@
         <button
           v-if="theme == 'light'"
           class="header__content-theme-toggle"
+          data-test-id="header-theme-dark"
           @click="theme = 'dark'"
         >
           <i class="gg-moon"></i>
@@ -16,6 +17,7 @@
         <button
           v-if="theme == 'dark'"
           class="header__content-theme-toggle"
+          data-test-id="header-theme-light"
           @click="theme = 'light'"
         >
           <i class="gg-sun"></i>
@@ -34,7 +36,7 @@ export default {
 
   data: () => ({
     get theme() {
-      return localStorage.getItem('theme') || 0
+      return localStorage.getItem('theme') || 'light'
     },
     set theme(theme) {
       localStorage.setItem('theme', theme)

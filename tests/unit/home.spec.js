@@ -1,11 +1,11 @@
-import mock from './home.mock.json'
+import mock from '../mocks/home.json'
 import { mount } from '@vue/test-utils'
 import Sort from '../../src/components/Home/Sort/index.vue'
 import SearchInput from '../../src/components/Home/SearchInput/index.vue'
 import CountryCard from '../../src/components/Home/CountryCard/index.vue'
 import RegionFilter from '../../src/components/Home/RegionFilter/index.vue'
 
-describe('Country Card', () => {
+describe('Home Page', () => {
   it('Country Card', () => {
     const wrapper = mount(CountryCard, {
       props: mock.CountryCard,
