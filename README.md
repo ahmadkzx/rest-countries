@@ -63,7 +63,7 @@ yarn test:unit
  - [X] Make sure styles are loaded whenever they're really needed. e.g., The styles for the details page don't load on the homepage
  - [X] Make sure the ratio for the country flags is 4:3 or any other ratio you find suitable
  - [X] Dockerize your application by creating an efficient Dockerfile
- - [ ] Add unit tests for components
+ - [X] Add unit tests for components
  - [X] Store the filters in the URL query strings and sync it with the component filter object
  - [X] Add lazy loading for country images and list
 
