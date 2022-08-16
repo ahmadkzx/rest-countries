@@ -1,12 +1,12 @@
 {
-  "name": "alibaba-rest-countries",
+  "name": "rest-countries",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "jest --verbose false",
+    "test:unit": "jest",
     "docker:build": "docker build -t alibaba-rest-countries .",
     "docker:run": "docker run -it -p 8000:80 --rm alibaba-rest-countries"
   },

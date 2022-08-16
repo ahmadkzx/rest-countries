@@ -1,4 +1,4 @@
-# Alibaba Rest Countries
+# Rest Countries
 Front-End interview task 
 
   ‌
@@ -35,6 +35,14 @@ yarn docker:build
 # run image on localhost:8080
 yarn docker:run 
 ```
+
+  ‌
+
+## 🔎 Testing
+```bash
+yarn test:unit
+```
+
 
   ‌
 
