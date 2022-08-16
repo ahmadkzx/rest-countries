@@ -64,3 +64,4 @@ yarn docker:run
 ## ℹ️ Things I Wanted To Do But I Didn't Have Not Enough Time:
  - Migrate to Nuxt 3 For SSR
  - Skeleton Loading For All Sections
+ - Improve Unit Tests

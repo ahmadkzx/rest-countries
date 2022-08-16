@@ -18,12 +18,15 @@
             <img
               :src="country.flags.svg"
               :alt="country.name"
+              data-test-id="country-page-flag"
               class="country-page__country-flag-photo"
             />
           </div>
 
           <div>
-            <h2 class="country-page__country-name">{{ country.name }}</h2>
+            <h2 class="country-page__country-name" data-test-id="country-page-name">
+              {{ country.name }}
+            </h2>
 
             <div class="country-page__country-info">
               <div
@@ -32,7 +35,12 @@
                 class="country-page__country-info-row"
               >
                 <span class="country-page__country-info-row-key">{{ info.key }}:</span>
-                <span class="country-page__country-info-row-value">{{ info.value }}</span>
+                <span
+                  class="country-page__country-info-row-value"
+                  :data-test-id="'country-page-' + info.testId"
+                >
+                  {{ info.value }}
+                </span>
               </div>
             </div>
 
@@ -45,6 +53,7 @@
                 <template v-if="!isLoadingBorderCountries">
                   <router-link
                     class="country-page__country-borders-items-country"
+                    data-test-id="country-page-border-country"
                     v-for="borderCountry in borderCountries"
                     :key="'border-' + borderCountry.alpha3Code"
                     :to="'/' + borderCountry.alpha3Code"
@@ -93,26 +102,36 @@ export default {
       if (!this.country) return
 
       return [
-        { key: 'Native Name', value: this.country.nativeName },
-        { key: 'Population', value: _separateNumber(this.country.population) },
-        { key: 'Region', value: this.country.region },
-        { key: 'Sub Region', value: this.country.subregion },
-        { key: 'Capital', value: this.country.capital },
-        { key: 'Top Level Domain', value: this.country.topLevelDomain.join(', ') },
+        { key: 'Native Name', value: this.country.nativeName, testId: 'native-name' },
+        {
+          key: 'Population',
+          value: _separateNumber(this.country.population),
+          testId: 'population',
+        },
+        { key: 'Region', value: this.country.region, testId: 'region' },
+        { key: 'Sub Region', value: this.country.subregion, testId: 'sub-region' },
+        { key: 'Capital', value: this.country.capital, testId: 'capital' },
+        {
+          key: 'Top Level Domain',
+          value: this.country.topLevelDomain.join(', '),
+          testId: 'top-level-domain',
+        },
         {
           key: 'Currencies',
           value: this.country.currencies.map((currency) => currency.name).join(', '),
+          testId: 'currencies',
         },
         {
           key: 'Languages',
           value: this.country.languages.map((language) => language.name).join(', '),
+          testId: 'languages',
         },
       ]
     },
   },
 
   mounted() {
-    this.getCountry()
+    if (!this.country) this.getCountry()
   },
 
   methods: {
