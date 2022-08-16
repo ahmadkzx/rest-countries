@@ -58,3 +58,9 @@ yarn docker:run
  - [ ] Add unit tests for components
  - [X] Store the filters in the URL query strings and sync it with the component filter object
  - [X] Add lazy loading for country images and list
+
+  ‌
+
+## ℹ️ Things I Wanted To Do But I Didn't Have Not Enough Time:
+ - Migrate to Nuxt 3 For SSR
+ - Skeleton Loading For All Sections
